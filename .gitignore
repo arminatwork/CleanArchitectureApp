@@ -361,3 +361,5 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/Server/src/CA.Api/Properties/serviceDependencies.json
+/Server/src/CA.Api/Properties/serviceDependencies.local.json
