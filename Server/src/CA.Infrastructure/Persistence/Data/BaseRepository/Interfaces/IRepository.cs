@@ -2,7 +2,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace CA.Infrastructure.Persistence.Data.BaseRepository
+namespace CA.Infrastructure.Persistence.Data.BaseRepository.Interfaces
 {
     public interface IRepository<TEntity> : IQueryRepository<TEntity> where TEntity : AuditableEntity
     {

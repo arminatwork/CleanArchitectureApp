@@ -1,4 +1,5 @@
 ﻿using CA.Domain.Common;
+using CA.Infrastructure.Persistence.Data.BaseRepository.Interfaces;
 using System.Threading;
 using System.Threading.Tasks;
 

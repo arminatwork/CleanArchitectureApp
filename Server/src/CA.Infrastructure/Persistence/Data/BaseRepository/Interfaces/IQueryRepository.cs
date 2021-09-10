@@ -6,7 +6,7 @@ using System.Linq.Expressions;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace CA.Infrastructure.Persistence.Data.BaseRepository
+namespace CA.Infrastructure.Persistence.Data.BaseRepository.Interfaces
 {
     public interface IQueryRepository<TEntity> where TEntity : AuditableEntity
     {

@@ -1,4 +1,5 @@
 ﻿using CA.Domain.Common;
+using CA.Infrastructure.Persistence.Data.BaseRepository.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
