@@ -1,3 +1,4 @@
+using CA.Application;
 using CA.Infrastructure;
 using CA.Infrastructure.Persistence;
 using Microsoft.AspNetCore.Builder;
@@ -20,6 +21,8 @@ namespace CA.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddInfrastructure(Configuration.GetConnectionString("ServerConnection"));
+
+            services.AddApplication();
 
             services.AddHttpContextAccessor();
             services.AddHealthChecks()
