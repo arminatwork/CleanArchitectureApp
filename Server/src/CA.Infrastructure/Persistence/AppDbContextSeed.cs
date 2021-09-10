@@ -1,4 +1,5 @@
-﻿using CA.Domain.Entities;
+﻿using CA.Domain.Consts;
+using CA.Domain.Entities;
 using CA.Domain.ValueObjects;
 using CA.Infrastructure.Identity;
 using CA.Infrastructure.Persistence.Data.BaseRepository;
