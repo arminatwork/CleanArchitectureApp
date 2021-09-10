@@ -19,7 +19,7 @@ namespace CA.Api
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.LoadDbContext(Configuration.GetConnectionString("ServerConnection"));
+            services.AddInfrastructure(Configuration.GetConnectionString("ServerConnection"));
 
             services.AddHttpContextAccessor();
             services.AddHealthChecks()
