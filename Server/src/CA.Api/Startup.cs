@@ -33,6 +33,7 @@ namespace CA.Api
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseHealthChecks("/health");
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
