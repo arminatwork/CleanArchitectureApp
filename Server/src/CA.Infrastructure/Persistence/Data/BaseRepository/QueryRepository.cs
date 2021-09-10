@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CA.Infrastructure.Persistence.Data.BaseRepository
 {
-    public class ReadRepository<TEntity> : IReadRepository<TEntity> where TEntity : AuditableEntity
+    public class QueryRepository<TEntity> : IQueryRepository<TEntity> where TEntity : AuditableEntity
     {
         public DbSet<TEntity> Entities { get; }
         public IQueryable<TEntity> Table => Entities;
@@ -16,7 +16,7 @@ namespace CA.Infrastructure.Persistence.Data.BaseRepository
 
         private readonly AppDbContext _context;
 
-        public ReadRepository(AppDbContext context)
+        public QueryRepository(AppDbContext context)
         {
             _context = context;
             Entities = _context.Set<TEntity>();
@@ -47,6 +47,24 @@ namespace CA.Infrastructure.Persistence.Data.BaseRepository
         public virtual ValueTask<TEntity> GetByIdAsync(CancellationToken cancellationToken, params object[] ids)
         {
             return Entities.FindAsync(ids, cancellationToken);
+        }
+
+        /// <summary>
+        /// is exists this <see cref="TEntity"/> in database by no tracking.
+        /// </summary>
+        /// <returns></returns>
+        public virtual bool IsExists()
+        {
+            return TableNoTracking.Any();
+        }
+
+        /// <summary>
+        /// is exists async this <see cref="TEntity"/> in database by no tracking.
+        /// </summary>
+        /// <returns></returns>
+        public virtual async Task<bool> IsExistsAsync(CancellationToken cancellationToken)
+        {
+            return await TableNoTracking.AnyAsync();
         }
 
         /// <summary>
