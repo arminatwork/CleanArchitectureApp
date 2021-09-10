@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CA.Domain\CA.Domain.csproj" />
+    <ProjectReference Include="..\CA.SharedKernel\CA.SharedKernel.csproj" />
   </ItemGroup>
 
 </Project>
