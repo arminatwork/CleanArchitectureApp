@@ -2,8 +2,7 @@
 using CA.Domain.Entities;
 using CA.Domain.ValueObjects;
 using CA.Infrastructure.Identity;
-using CA.Infrastructure.Persistence.Data.BaseRepository;
-using CA.SharedKernel.Consts;
+using CA.Infrastructure.Persistence.Data.BaseRepository.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
