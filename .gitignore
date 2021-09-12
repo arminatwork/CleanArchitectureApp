@@ -363,3 +363,6 @@ MigrationBackup/
 FodyWeavers.xsd
 /Server/src/CA.Api/Properties/serviceDependencies.json
 /Server/src/CA.Api/Properties/serviceDependencies.local.json
+/Server/src/Api/CA.Api/Properties/launchSettings.json
+/Server/src/Api/CA.Api/Properties/serviceDependencies.json
+/Server/src/Api/CA.Api/Properties/serviceDependencies.local.json
