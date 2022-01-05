@@ -13,6 +13,7 @@
 	<ItemGroup>
 		<ProjectReference Include="..\..\SharedKernel\CA.SharedKernel.Application\CA.SharedKernel.Application.csproj" />
 		<ProjectReference Include="..\..\SharedKernel\CA.SharedKernel.Infrastructure\CA.SharedKernel.Infrastructure.csproj" />
+		<ProjectReference Include="..\CA.Todos.Application\CA.Todos.Application.csproj" />
 		<ProjectReference Include="..\CA.Todos.Domain\CA.Todos.Domain.csproj" />
 	</ItemGroup>
 

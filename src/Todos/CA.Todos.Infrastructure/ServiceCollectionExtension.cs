@@ -1,9 +1,11 @@
-﻿using CA.Todos.Infrastructure.Persistence;
+﻿using CA.SharedKernel.Application.Interfaces;
+using CA.SharedKernel.Infrastructure.Services;
+using CA.Todos.Infrastructure.Persistence;
 
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace CA.Infrastructure;
+namespace CA.Todos.Infrastructure;
 
 public static class ServiceCollectionExtension
 {
@@ -20,7 +22,7 @@ public static class ServiceCollectionExtension
     {
         var assembly = typeof(TodoDbContext).Assembly.FullName;
 
-        service.AddDbContextPool<TodoDbContext>(_ =>
+        service.AddDbContext<TodoDbContext>(_ =>
         {
             _.UseSqlServer(connectionString, sql => sql.MigrationsAssembly(assembly));
         });
@@ -29,10 +31,10 @@ public static class ServiceCollectionExtension
         //service.AddScoped<IAppDbContext>(factory => factory.GetService<AppDbContext>());
     }
 
-    //TODO: i will check this
     internal static void LoadServices(this IServiceCollection service)
     {
-        //service.AddScoped<IDomainEventService, DomainEventService>();
+        service.AddScoped<IDomainEventService, DomainEventService>();
+        service.AddScoped<ICurrentUserService, CurrentUserService>();
     }
 
     //TODO: i will check this

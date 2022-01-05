@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using MediatR;
+
+using Microsoft.Extensions.DependencyInjection;
 
 using System.Reflection;
 
@@ -10,6 +12,6 @@ public static class ServiceCollectionExtension
     {
         var assembly = Assembly.GetExecutingAssembly();
 
-        //services.AddMediatR(assembly);
+        services.AddMediatR(assembly);
     }
 }

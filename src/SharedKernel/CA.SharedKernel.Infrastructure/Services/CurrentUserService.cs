@@ -1,8 +1,10 @@
 ﻿using CA.SharedKernel.Application.Interfaces;
 
+using Microsoft.AspNetCore.Http;
+
 using System.Security.Claims;
 
-namespace CA.Api.Services;
+namespace CA.SharedKernel.Infrastructure.Services;
 
 public class CurrentUserService : ICurrentUserService
 {
@@ -13,5 +15,5 @@ public class CurrentUserService : ICurrentUserService
         _httpContextAccessor = httpContextAccessor;
     }
 
-    public string UserId => _httpContextAccessor.HttpContext?.User?.FindFirstValue(ClaimTypes.NameIdentifier);
+    public string UserId => _httpContextAccessor.HttpContext?.User?.FindFirst(ClaimTypes.NameIdentifier.ToString()).ToString();
 }
